@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 //actualizar documento de la base de datos
 router.put("/:id", (req, res) => {
     //findOneAndUpdate se utiliza para buscar y actualizar un doc. especifico
-    Todo.findOneAndUpdate({ _id: req.body.id }, req.body, { new: true }, (err, result) => {
+    Todo.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, (err, result) => {
         if (err) throw new Error(err);
         res.json(result);
     });
